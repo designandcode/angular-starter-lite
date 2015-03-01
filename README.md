@@ -1,3 +1,3 @@
 Angular Starter Lite - Directives
 ======
-Demo: 
+Demo: http://designandcode.github.io/angular-starter-lite/
