@@ -36,7 +36,7 @@ describe("permissionTest", function(){
     expect(permissions.view()).toBe(true);
     expect(permissions.create()).toBe(false);
   });
-  it('should test permissions - user 3', function(){
+  it('should test permissions - user 1', function(){
     var permissions = permission.set({show: 2, view: 2, edit: 2, delete: 2, create: 2}, 1);
     expect(permissions.show(1)).toBe(true);
     expect(permissions.show(2)).toBe(true);
