@@ -51,29 +51,24 @@ app.directive('userDelete', function(){
 function userCtlr($scope, $routeParams, $location, permissionService, userService, urlService){
   var id = $routeParams.id ? $routeParams.id : null;
   $scope.user = userService.getUser(id);
-  console.log($scope.user);
   $scope.current = userService.getCurrent();
   $scope.users = userService.getUsers();
   $scope.permissions = {
     user: $scope.user && permissionService.set($scope.current.permissions, $scope.current.id, $scope.user.id)
   }
-  console.log($scope.user, $scope.current, $scope.permissions);
   $scope.urls = urlService.getUrls();
   /**
    *  View
    */
   if($location.path().match('/View')){
-    console.log($location.path());
   }
   /**
    *  Show
    */
   if($location.path().match('/Show')){
-    console.log($location.path());
   }
   // Edit
   if($location.path().match('/Edit')){
-    console.log($location.path());
     $scope.action = {
       save: function(){
         var editUser = userService.editUser(id);
@@ -84,7 +79,6 @@ function userCtlr($scope, $routeParams, $location, permissionService, userServic
   }
   // New
   if($location.path().match('/New')){
-    console.log($location.path());
     $scope.action = {
       create: function(){
         var createUser = userService.createUser($scope.newUser);

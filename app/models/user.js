@@ -14,7 +14,6 @@ app.service('userService', ['$localStorage', function($localStorage){
     return t.users;
   }
   this.getUser = function(id){
-    //console.log(id);
     if(id){
       var users = t.getUsers();
       for(var i=0; i<users.length; i++){
@@ -31,7 +30,6 @@ app.service('userService', ['$localStorage', function($localStorage){
   }
   this.getCurrent = function(){
     var userID = t.$storage['v03_ED']['current'];
-    //console.log(userID);
     if(userID){
       var users = t.getUsers();
       for(var i=0; i<users.length; i++){

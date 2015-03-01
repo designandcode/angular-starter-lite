@@ -29,11 +29,9 @@ function headerNavCtrl($scope, authService, $localStorage, $location, urlService
   $scope.redirect = {
     home: '/Home'
   }
-  console.log(urlService.getUrls());
   $scope.urls = urlService.getUrls();
   $scope.action = {
     logout: function(redirect){
-      console.log(redirect);
       return authService.logout() && $location.path($scope.redirect.home);
     }
   }

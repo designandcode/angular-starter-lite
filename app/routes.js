@@ -31,7 +31,6 @@ app.config(function($routeProvider, $locationProvider){
     '404': '#/404'
   })
   $rootScope.$on('$routeChangeSuccess', function(event, next, current){
-    console.log('routeChanged');
     !authService.persist() && $location.path('/Home');
     urlService.setUrls({
       home: '#/Home'

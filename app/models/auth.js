@@ -3,7 +3,6 @@ app.service('authService', ['$localStorage', function($localStorage){
   this.$storage = $localStorage;
   this.$storage['v03_ED'] = this.$storage['v03_ED'] || {}
   this.session = this.$storage['v03_ED']['session'];
-  console.log(t.session);
   this.sessions = {
     'blah': 1,
     'foo': 2,
@@ -40,13 +39,11 @@ app.service('authService', ['$localStorage', function($localStorage){
       var users = t.users;
       for(i in users){
         if(users[i]['id'] == current && users[i]['id'] == t.sessions[session]){
-          console.log(users[i]['id'], current, t.sessions[session]);
           t.$storage['v03_ED']['current'] = users[i]['id'];
           t.$storage['v03_ED']['session'] = session;
           t.$storage['v03_ED']['persist'] = true;
           return users[i]['id'];
         } else{
-          console.log(users[i]['id'], current, t.sessions[session]);
           t.$storage['v03_ED'] = {}
         }
       }
