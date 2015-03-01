@@ -70,7 +70,7 @@ app.service('userService', ['$localStorage', function($localStorage){
   }
   this.deleteUser = function(id){
     if(id){
-      t.users.splice(id-1, id);
+      t.users.splice(id-1, 1);
       return true;
     }
     return false;
